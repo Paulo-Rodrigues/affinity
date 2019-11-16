@@ -14,4 +14,8 @@ RSpec.feature 'Registered User redirect to' do
 
     expect(page).to have_link("Edit Profile")
   end
+
+  scenario 'authenticated user redirect to ' do
+
+  end
 end
