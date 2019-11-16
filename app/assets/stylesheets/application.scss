@@ -3,6 +3,8 @@ html, body {
   font-family: 'Montserrat', sans-serif;
   height: 100%;
   margin: 0;
+  background-color: rgba(213, 213, 213, 0.795);
 }
 
 @import "landing_page";
+@import "devise";
