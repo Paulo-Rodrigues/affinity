@@ -7,4 +7,8 @@ RSpec.describe User, type: :model do
     it {is_expected.to respond_to(:first_name)}
     it {is_expected.to respond_to(:last_name)}
   end
+
+  context 'associations' do
+    it {is_expected.to have_many(:thoughts)}
+  end
 end
