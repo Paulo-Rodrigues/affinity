@@ -3,11 +3,17 @@ require 'rails_helper'
 RSpec.feature 'Thoughts', type: :feature do
   before do
     @user = create(:user);login_as(@user)
-    @thought = create(:thought, user_id: @user.id)
   end
   scenario 'user create thought' do
     visit root_path
 
-    expect(page).to have_content(@thought.body)
+    click_link "New Thought"
+
+    fill_in "Body", with: 'Some text'
+    
+    click_button "Create thought"
+
+    expect(page).to have_content('Created thought')
+
   end
 end
