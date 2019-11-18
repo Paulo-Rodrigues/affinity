@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'users#show', as: :profile
 
   authenticated :user do
-    root to: "thoughts#index", as: :dashboard
+    root to: "dashboards#index", as: :dashboard
   end
 
-  resources :thoughts
+  resources :thoughts, except: [:index]
 
   root 'landing_page#index'
 end

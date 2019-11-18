@@ -1,8 +1,5 @@
 class ThoughtsController < ApplicationController
   before_action :find_thought, only: [:show, :edit, :update, :destroy]
-  def index
-    @thoughts = Thought.all.sample
-  end
 
   def show
   end
