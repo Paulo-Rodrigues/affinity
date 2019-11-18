@@ -13,7 +13,7 @@ RSpec.feature 'Thoughts', type: :feature do
     
     click_button "Create thought"
 
-    expect(page).to have_content('Created thought')
+    expect(page).to have_content('Some text')
 
   end
 end
