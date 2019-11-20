@@ -1,1 +1,29 @@
-dashboard
+<section class="dashboard-container">
+  <section class="dashboard-side-menu">
+    <div class="dashboard-menu-title"><h1>NAME</h1></div>
+    <div class="dashboard-menu-sugestions"><h2>Sugestions</h2></div>
+  </section>
+  <section class="dashboard-body">
+    <div class="dashboard-body-card">
+      <div class="card">
+        <div class="card-content">
+          <p class="title">
+            <%= @thoughts.body %>
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              <%= link_to "Like", "#" %>
+            </span>
+          </p>
+          <p class="card-footer-item">
+            <span>
+              <%= link_to "Unlike", "#" %>
+            </span>
+          </p>
+        </footer>
+      </div> 
+    </div>
+  </section>
+</section>

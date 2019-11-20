@@ -1,3 +1,33 @@
-// Place all the styles related to the Dashboards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.dashboard-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.dashboard-side-menu {
+    background-color: rgba(156, 154, 154, 0.664);
+    grid-column: 1 / 2;
+
+    h1 {
+        background-color: red;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        padding: 10px;
+    }
+}
+
+.dashboard-body {
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-body-card {
+    max-width: 80%;
+}
