@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     root to: "dashboards#index", as: :dashboard
   end
 
-  resources :thoughts, except: [:index]
+  resources :thoughts, except: [:index] do
+    resources :likes, only: [:create, :destroy], module: :thoughts
+  end
 
   root 'landing_page#index'
 end
