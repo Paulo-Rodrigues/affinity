@@ -14,12 +14,12 @@
         <footer class="card-footer">
           <p class="card-footer-item">
             <span>
-              <%= link_to "Like", thought_likes_path(@thoughts), method: :post %>
+              <%= link_to "Like", thought_votes_path(@thoughts, upvote: :true), method: :post %>
             </span>
           </p>
           <p class="card-footer-item">
             <span>
-              <%= link_to "Unlike", thought_like_path(@thoughts), method: :delete %>
+              <%= link_to "Unlike", "#" %>
             </span>
           </p>
         </footer>

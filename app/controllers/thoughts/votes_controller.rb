@@ -1,4 +1,4 @@
-class Thoughts::LikesController < LikesController
+class Thoughts::VotesController < VotesController
   before_action :set_votable
 
   private

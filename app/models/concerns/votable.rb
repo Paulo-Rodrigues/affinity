@@ -1,7 +1,7 @@
 module Votable
   extend ActiveSupport::Concern
 
-  def like(votable)
+  def upvote(votable)
     votes.create(votable: votable, user_id: self.id)
   end
 

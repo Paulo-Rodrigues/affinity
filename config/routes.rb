@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :thoughts, except: [:index] do
-    resources :likes, only: [:create, :destroy], module: :thoughts
+    resources :votes, only: [:create, :destroy], module: :thoughts
   end
 
   root 'landing_page#index'
