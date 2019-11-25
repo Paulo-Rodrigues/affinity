@@ -5,7 +5,7 @@ module Votable
     votes.create(votable: votable, user_id: self.id)
   end
 
-  def unlike(votable)
+  def downvote(votable)
     to_unlike = find_vote(votable)
     votes.delete(to_unlike)
   end

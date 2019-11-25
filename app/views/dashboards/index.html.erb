@@ -19,7 +19,7 @@
           </p>
           <p class="card-footer-item">
             <span>
-              <%= link_to "Unlike", "#" %>
+              <%= link_to "Unlike", thought_votes_path(@thoughts, dowvote: :true), method: :post %>
             </span>
           </p>
         </footer>
