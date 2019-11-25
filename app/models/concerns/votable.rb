@@ -2,16 +2,23 @@ module Votable
   extend ActiveSupport::Concern
 
   def upvote(votable)
-    votes.create(votable: votable, user_id: self.id)
+    votes.create(votable: votable, user_id: self.id, up: true, voted: true)
   end
 
   def downvote(votable)
-    to_unlike = find_vote(votable)
-    votes.delete(to_unlike)
+    votes.create(votable: votable, user_id: self.id, down: true, voted: true)
   end
 
-  def liked?(votable)
+  def voted?(votable)
     find_vote(votable).exists?
+  end
+
+  def upvoted_resources
+    Vote.where(user_id: self.id, up: true)
+  end
+
+  def downvoted_resources
+    Vote.where(user_id: self.id, down: true)
   end
 
   private
