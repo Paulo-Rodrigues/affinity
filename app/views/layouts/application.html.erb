@@ -14,7 +14,7 @@
   </head>
 
   <body>
-  <%= render 'layouts/shared/navbar' %>
+  <%= render 'layouts/shared/navbar' unless @hide_nav %>
   <% flash.each do |key, msg| %>
     <p class="#{key}"><%= msg %></p>
   <% end %>
