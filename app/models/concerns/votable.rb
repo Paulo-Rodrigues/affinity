@@ -2,11 +2,11 @@ module Votable
   extend ActiveSupport::Concern
 
   def upvote(votable)
-    votes.create(votable: votable, user_id: self.id, up: true, voted: true)
+    votes.create(votable: votable, user_id: self.id, up: true)
   end
 
   def downvote(votable)
-    votes.create(votable: votable, user_id: self.id, down: true, voted: true)
+    votes.create(votable: votable, user_id: self.id, down: true)
   end
 
   def voted?(votable)
@@ -15,6 +15,10 @@ module Votable
 
   def upvoted_resources
     Vote.where(user_id: self.id, up: true)
+  end
+
+  def all_voted
+    Vote.where(user_id: self.id).map(&:votable_id)
   end
 
   def downvoted_resources

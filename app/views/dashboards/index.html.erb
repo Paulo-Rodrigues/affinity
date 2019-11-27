@@ -5,25 +5,27 @@
   </section>
   <section class="dashboard-body">
     <div class="dashboard-body-card">
+
       <div class="card">
         <div class="card-content">
           <p class="title">
-            <%= @thoughts.body %>
+            <%= @thought.body %>
           </p>
         </div>
         <footer class="card-footer">
           <p class="card-footer-item">
             <span>
-              <%= link_to "Like", thought_votes_path(@thoughts, upvote: :true), method: :post %>
+              <%= link_to "Like", thought_votes_path(@thought, upvote: :true), method: :post %>
             </span>
           </p>
           <p class="card-footer-item">
             <span>
-              <%= link_to "Unlike", thought_votes_path(@thoughts, dowvote: :true), method: :post %>
+              <%= link_to "Unlike", thought_votes_path(@thought, dowvote: :true), method: :post %>
             </span>
           </p>
         </footer>
       </div> 
+
     </div>
   </section>
 </section>

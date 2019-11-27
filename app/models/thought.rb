@@ -3,4 +3,5 @@ class Thought < ApplicationRecord
   has_many :votes, as: :votable
 
   validates :body, presence: true, length: {maximum: 500}
+
 end
