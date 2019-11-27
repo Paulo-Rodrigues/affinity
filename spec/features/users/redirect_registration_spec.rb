@@ -4,7 +4,7 @@ RSpec.feature 'Registered User redirect to' do
   scenario 'to profile' do
     visit root_path
 
-    click_link "Sign up"
+    click_link "Sign up", match: :first
 
     fill_in "Email", with: 'test@test.com'
     fill_in "Password", with: 'password'
