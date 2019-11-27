@@ -18,7 +18,9 @@ module Votable
   end
 
   def all_voted
-    Vote.where(user_id: self.id).map(&:votable_id)
+    all = Vote.where(user_id: self.id).map(&:votable_id)
+    all << self.thoughts.ids
+    all
   end
 
   def downvoted_resources

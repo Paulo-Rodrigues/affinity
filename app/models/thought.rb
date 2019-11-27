@@ -4,4 +4,6 @@ class Thought < ApplicationRecord
 
   validates :body, presence: true, length: {maximum: 500}
 
+  delegate :username, to: :user
+
 end
