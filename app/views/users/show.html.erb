@@ -1,1 +1,19 @@
-<%= link_to "Edit Profile", edit_user_registration_path %>
+<section class="profile-container">
+  <section class="profile-info">
+    <p><%= @user.username %></p>
+  </section>
+
+  <section class="profile-follows">
+    <p>total followers: 0</p>
+    <p>total following: 0</p>
+  </section>
+
+  <section class="profile_thoughts-container">
+    <section class="profile_thoughts">
+      <% @user.thoughts.each do |t| %>
+        <p><%= t.body %></p>
+      <% end %>
+    </section>
+  </section>
+
+</section>
