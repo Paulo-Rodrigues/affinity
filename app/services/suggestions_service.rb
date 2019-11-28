@@ -29,7 +29,7 @@ class SuggestionsService
 
   def most_liked
     most_liked = count_preferences(suggestions_ids)
-    most_liked_hash = most_liked.select { |user, count| count >= 2 }
+    most_liked_hash = most_liked.select { |user, count| count >= 10 }
     most_liked_hash
   end
 
