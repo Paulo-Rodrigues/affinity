@@ -1,7 +1,12 @@
 <section class="dashboard-container">
   <section class="dashboard-side-menu">
     <div class="dashboard-menu-title"><h1><%= current_user.username.upcase %></h1></div>
-    <div class="dashboard-menu-sugestions"><h2>Sugestions</h2></div>
+    <div class="dashboard-menu-sugestions">
+      <h2>Sugestions</h2>
+      <% @suggestions.each do |most_liked_user| %>
+        <p><%= link_to most_liked_user.username, profile_path(most_liked_user) %></p>
+      <% end %>
+    </div>
   </section>
   <section class="dashboard-body">
     <div class="dashboard-body-card">
